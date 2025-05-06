@@ -52,15 +52,12 @@ const newMemory = ref<Omit<TravelMemory, 'id' | 'userId'>>({
 
 onMounted(() => {
   if (mapContainer.value) {
-    // Initialize map
     map.value = L.map(mapContainer.value).setView([0, 0], 2)
     
-    // Add tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(map.value as L.Map)
 
-    // Add click handler
     map.value.on('click', (e: L.LeafletMouseEvent) => {
       if (userStore.user) {
         newMemory.value.location.lat = e.latlng.lat
@@ -69,7 +66,6 @@ onMounted(() => {
       }
     })
 
-    // Load existing memories
     memoriesStore.loadMemories()
     memoriesStore.memories.forEach(memory => {
       if (memory.userId === userStore.user?.id) {
@@ -142,7 +138,7 @@ const cancelAdd = () => {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: white;
+  background-color: rgb(98, 98, 98);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

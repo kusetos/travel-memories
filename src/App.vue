@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <header class="header">
-      <h1>Travel Memories 🌍</h1>
+      <h1>Travel Memories</h1>
       <div v-if="user" class="user-info">
         Welcome, {{ user.username }}!
         <button class="logout-button" @click="handleLogout">Logout</button>
@@ -60,11 +60,11 @@ const handleLogout = () => {
 <style>
 .app {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #6d6d6d;
 }
 
 .header {
-  background-color: #2c3e50;
+  background-color: #252525;  
   color: white;
   padding: 1rem 2rem;
   display: flex;
@@ -82,7 +82,7 @@ const handleLogout = () => {
   max-width: 400px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: white;
+  background-color: #252525;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -104,17 +104,13 @@ const handleLogout = () => {
 
 .button {
   padding: 0.75rem;
-  background-color: #42b883;
+  background-color: #00a55b;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.2s;
-}
-
-.button:hover {
-  background-color: #3aa876;
 }
 
 .app-container {

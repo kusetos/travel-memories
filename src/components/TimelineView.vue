@@ -10,7 +10,7 @@
           <div class="timeline-header">
             <h3>{{ memory.location.name }}</h3>
             <button class="delete-button" @click="deleteMemory(memory.id)" title="Delete memory">
-              🗑️
+              Remove
             </button>
           </div>
           <div class="timeline-date">
@@ -46,17 +46,16 @@ const deleteMemory = (id: string) => {
 
 <style scoped>
 .timeline-container {
-  background-color: white;
+  background-color: #272727;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 600px;
   overflow-y: auto;
 }
 
 .empty-state {
   text-align: center;
-  color: #666;
+  color: #8d8d8d;
   padding: 2rem;
 }
 
@@ -66,25 +65,8 @@ const deleteMemory = (id: string) => {
   gap: 1.5rem;
 }
 
-.timeline-item {
-  position: relative;
-  padding-left: 2rem;
-  border-left: 2px solid #42b883;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background-color: #42b883;
-}
-
 .timeline-content {
-  background-color: #f8f9fa;
+  background-color: #474747;
   padding: 1rem;
   border-radius: 4px;
 }
@@ -98,11 +80,11 @@ const deleteMemory = (id: string) => {
 
 .timeline-header h3 {
   margin: 0;
-  color: #2c3e50;
+  color: #63b1ff;
 }
 
 .delete-button {
-  background: none;
+  background: red;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -116,13 +98,13 @@ const deleteMemory = (id: string) => {
 }
 
 .timeline-date {
-  color: #666;
+  color: #dcdcdc;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
 
 .timeline-note {
-  color: #2c3e50;
+  color: #d7ebff;
   line-height: 1.5;
   margin: 0;
 }
